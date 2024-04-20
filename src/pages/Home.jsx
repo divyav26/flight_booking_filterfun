@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import banner from '../imgs/banner.jpg'
-import { alAirlines, allClasses, price } from '../Data/Info'
+import { alAirlines, allClasses } from '../Data/Info'
 import { Allflights } from '../Data/Info'
 import { MdConnectingAirports } from "react-icons/md";
 import { FaDollarSign } from "react-icons/fa";
@@ -10,7 +10,7 @@ import { MdDateRange } from "react-icons/md";
 const Home = () => {
     const [searchsource, setSource] = useState('');
     const [searchdestination, setDestination] = useState('');
-    const [searchdate, setDate] = useState('');
+    const [searchdate, setDate] = useState(new Date());
     const [searchPrice , setPrice] = useState('');
     const [searchallclass, setAllClass] = useState('');
     const [searchallAirlines , setAllAirlines] = useState('')
@@ -20,12 +20,24 @@ const Home = () => {
         let filtered = Allflights.filter(flight=>{
             if(searchsource && flight.source.toLowerCase() !== searchsource.toLowerCase()) return false
             if(searchdestination && flight.destination.toLowerCase() !== searchdestination.toLowerCase()) return false
-            if(searchdate && flight.date !== searchdate) return false
-
+            if(searchallAirlines && flight.airline.toLowerCase() !== searchallAirlines.toLowerCase())return false
+            if(searchallclass && flight.classType.toLowerCase() !== searchallclass.toLowerCase()) return false
             return true
         })
+
+        if (searchPrice === 'lowPrice') {
+            filtered = filtered.sort((a, b) => a.price - b.price);
+          } else if (searchPrice === 'highPrice') {
+            filtered = filtered.sort((a, b) => b.price - a.price);
+          }
+
+
+
+
+
         setFilteredFlights(filtered)
-    },[searchsource,searchdestination,searchdate])
+
+    },[searchsource,searchdestination,searchallAirlines,searchallclass,searchPrice])
    
 
   
@@ -53,17 +65,9 @@ const Home = () => {
 
             <div className='flex flex-col'>
             <select className='p-2 rounded-sm' value={searchPrice} onChange={(e)=>setPrice(e.target.value)}>
-                <option>Price</option>
-                    {
-                        price.map((item)=>{
-                            return(
-                                <>
-                                    <option value={item.price}>{item.price}</option>
-                                </>
-                            )
-                        })
-                    }
-                </select>
+                <option value="lowPrice">Lowest Price</option>
+                <option value="highPrice">Highest Price</option>
+            </select>
             </div>
 
 
@@ -75,7 +79,7 @@ const Home = () => {
                         alAirlines.map((item)=>{
                             return(
                                 <>
-                                    <option>{item.name}</option>
+                                    <option value={item.name}>{item.name}</option>
                                 </>
                             )
                         })
@@ -88,10 +92,10 @@ const Home = () => {
                 <select className='p-2 rounded-sm' value={searchallclass} onChange={(e)=>setAllClass(e.target.value)}>
                 <option>All Classes</option>
                     {
-                        allClasses.map((item)=>{
+                        allClasses.map((item,id)=>{
                             return(
                                 <>
-                                    <option>{item.name}</option>
+                                    <option value={item.name}>{item.name}</option>
                                 </>
                             )
                         })
@@ -99,19 +103,16 @@ const Home = () => {
                 </select>
             </div>
 
-            <div className='pt-4'>
-                <button className='text-white text-xl px-6 py-1 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500'>Search</button>
-            </div>
         </div>
       </div>
     </div>
 
    <div className='lg:grid lg:grid-cols-2 gap-[2rem] px-[10rem] mb-[2rem]'>
     {
-        filteredFlights.map((val)=>{
+        filteredFlights.map((val,id)=>{
             return(
                 <>
-                <div className='border-2 border-white rounded-md p-2 mt-[1rem] shadow-md'>
+                <div className='border-2 border-white rounded-md p-2 mt-[1rem] shadow-md' key={id}>
                   <img src={val.img} alt='img' />
                   <div className='flex justify-around pt-2'>
                         <p className='flex items-center'><FaLocationDot />{val.source}</p>

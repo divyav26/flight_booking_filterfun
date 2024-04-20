@@ -5,7 +5,7 @@ export const Allflights = [
     img:c1,
     source: 'New York', 
     destination: 'Los Angeles', 
-    date: '2024-04-22', 
+    date: '2024-04-21', 
     price: 10000, 
     airline: 'Air India Express',
     classType: 'Economy' 
@@ -27,8 +27,8 @@ export const Allflights = [
         destination: 'Delhi',
          date: '2024-04-22', 
          price: 13000, 
-         airline: 'Air India Express', 
-         classType: 'Business'
+         airline: 'Fly Big', 
+         classType: 'Economy'
   },
 
   { id: 4,
@@ -36,9 +36,9 @@ export const Allflights = [
      source: 'Mumbai',
       destination: 'Delhi',
        date: '2024-04-22', 
-       price: 13000, 
+       price: 15000, 
        airline: 'Fly Big', 
-       classType: 'Business'
+       classType: 'Economy'
   },
   {   id: 5,
       img:c1,
@@ -47,7 +47,7 @@ export const Allflights = [
        date: '2024-04-22', 
        price: 15000, 
        airline: 'Spice Jet', 
-       classType: 'Business'
+       classType: 'Economy'
 },
 {   id: 6,
   img:c1,
@@ -65,7 +65,7 @@ export const Allflights = [
    date: '2024-04-22', 
    price: 11000, 
    airline: 'Fly Big', 
-   classType: 'Business'
+   classType: 'Premium Economy'
 },
     
   ];
@@ -87,11 +87,3 @@ export const Allflights = [
     
   ]
 
-  export const price =[
-    {id:1, price:10000},
-    {id:1, price:12000},
-    {id:1, price:15000},
-    {id:1, price:8000},
-    {id:1, price:9000},
-    {id:1, price:11000},
-  ]
