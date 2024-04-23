@@ -10,7 +10,7 @@ import { MdDateRange } from "react-icons/md";
 const Home = () => {
     const [searchsource, setSource] = useState('');
     const [searchdestination, setDestination] = useState('');
-    const [searchdate, setDate] = useState(new Date());
+    const [searchdate, setDate] = useState();
     const [searchPrice , setPrice] = useState('');
     const [searchallclass, setAllClass] = useState('');
     const [searchallAirlines , setAllAirlines] = useState('')
