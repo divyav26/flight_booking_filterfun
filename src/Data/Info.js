@@ -5,7 +5,7 @@ export const Allflights = [
     img:c1,
     source: 'New York', 
     destination: 'Los Angeles', 
-    date: '04-24-2024', 
+    date: '04/24/2024', 
     price: 10000, 
     airline: 'Air India Express',
     classType: 'Economy' 
@@ -15,7 +15,7 @@ export const Allflights = [
         img:c1,
          source: 'Los Angeles',
           destination: 'New York',
-           date: '04-24-2024', 
+           date: '04/24/2024', 
            price: 15000, 
            airline: 'Spice Jet', 
            classType: 'Business'
@@ -25,7 +25,7 @@ export const Allflights = [
       img:c1,
        source: 'Mumbai',
         destination: 'Delhi',
-         date: '04-24-2024', 
+         date: '04/24/2024', 
          price: 13000, 
          airline: 'Fly Big', 
          classType: 'Economy'
@@ -35,7 +35,7 @@ export const Allflights = [
     img:c1,
      source: 'Mumbai',
       destination: 'Delhi',
-       date: '04-24-2024', 
+       date: '04/24/2024', 
        price: 15000, 
        airline: 'Fly Big', 
        classType: 'Economy'
@@ -44,7 +44,7 @@ export const Allflights = [
       img:c1,
       source: 'Bengaluru',
       destination: 'Delhi',
-       date: '04-24-2024', 
+       date: '04/24/2024', 
        price: 15000, 
        airline: 'Spice Jet', 
        classType: 'Economy'
@@ -53,7 +53,7 @@ export const Allflights = [
   img:c1,
   source: 'Kolkata',
   destination: 'Delhi',
-   date: '04-24-2024', 
+   date: '04/24/2024', 
    price: 8000, 
    airline: 'Indigo', 
    classType: 'Business'
@@ -62,7 +62,7 @@ export const Allflights = [
   img:c1,
   source: 'Bengaluru',
   destination: 'Pune',
-   date: '04-24-2024', 
+   date: '04/24/2024', 
    price: 11000, 
    airline: 'Fly Big', 
    classType: 'Premium Economy'
