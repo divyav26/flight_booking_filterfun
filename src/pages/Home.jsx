@@ -17,50 +17,49 @@ const Home = () => {
     const [filteredFlights, setFilteredFlights] = useState([])
 
     useEffect(()=>{
-        let filtered = Allflights.filter(flight=>{
+        let filteredData = Allflights.filter(flight=>{
             if(searchsource && flight.source.toLowerCase() !== searchsource.toLowerCase()) return false
             if(searchdestination && flight.destination.toLowerCase() !== searchdestination.toLowerCase()) return false
             if(searchallAirlines && flight.airline.toLowerCase() !== searchallAirlines.toLowerCase())return false
             if(searchallclass && flight.classType.toLowerCase() !== searchallclass.toLowerCase()) return false
+        
+            
+            
             return true
         })
 
+       
+
         if (searchPrice === 'lowPrice') {
-            filtered = filtered.sort((a, b) => a.price - b.price);
+            filteredData = filteredData.sort((a, b) => a.price - b.price);
           } else if (searchPrice === 'highPrice') {
-            filtered = filtered.sort((a, b) => b.price - a.price);
+            filteredData = filteredData.sort((a, b) => b.price - a.price);
           }
-
-
-
-
-
-        setFilteredFlights(filtered)
+        setFilteredFlights(filteredData)
 
     },[searchsource,searchdestination,searchallAirlines,searchallclass,searchPrice])
-   
 
   
   return (
     <>
     <div>
       <div className='relative'>
-        <img src={banner} alt='bg_banner' className='w-full lg:h-[70vh]' />
-        <div className="bg-black/45 absolute top-0 left-0 w-full lg:h-[70vh]" />
+        <img src={banner} alt='bg_banner' className='w-full lg:h-[75vh] md:h-[50vh] h-[60vh]' />
+        <div className="bg-black/45 absolute top-0 left-0 w-full lg:h-[75vh] md:h-[50vh] h-[60vh]" />
       </div>
-      <div className='absolute top-40'>
-        <div className='grid grid-cols-3 gap-[1rem] px-[10rem]'>
+      <div className='absolute lg:top-60 md:top-60 top-40 w-full'>
+        <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[1rem] lg:px-[5rem] px-[2rem]'>
             <div className='flex flex-col'>
-                <label className='text-white'>Source</label>
+                <label className='text-white block'>Source</label>
                 <input type='text' value={searchsource} onChange={(e)=>setSource(e.target.value)} className='p-2 rounded-sm' placeholder='Source' />
             </div>
             <div className='flex flex-col'>
                 <label className='text-white'>Destination</label>
-                <input type='text' value={searchdestination} onChange={(e)=>setDestination(e.target.value)} className='p-2 rounded-sm' placeholder='Destination' />
+                <input type='text' value={searchdestination} onChange={(e)=>setDestination(e.target.value)} className='p-2 rounded-sm block lg:w-[100%] w-[100%]' placeholder='Destination' />
             </div>
             <div className='flex flex-col'>
                 <label className='text-white'>Date</label>
-                <input type='date' value={searchdate} onChange={(e)=>setDate(e.target.date)} className='p-2 rounded-sm' placeholder='Destination' />
+                <input type='date' value={searchdate} onChange={(e)=>setDate(e.target.value)} className='p-2 rounded-sm' />
             </div>
 
             <div className='flex flex-col'>
@@ -92,7 +91,7 @@ const Home = () => {
                 <select className='p-2 rounded-sm' value={searchallclass} onChange={(e)=>setAllClass(e.target.value)}>
                 <option>All Classes</option>
                     {
-                        allClasses.map((item,id)=>{
+                        allClasses.map((item)=>{
                             return(
                                 <>
                                     <option value={item.name}>{item.name}</option>
@@ -107,7 +106,7 @@ const Home = () => {
       </div>
     </div>
 
-   <div className='lg:grid lg:grid-cols-2 gap-[2rem] px-[10rem] mb-[2rem]'>
+   <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-[2rem] lg:px-[5rem] px-[2rem] mb-[2rem]'>
     {
         filteredFlights.map((val,id)=>{
             return(
