@@ -6,8 +6,8 @@ import { TfiEmail } from "react-icons/tfi";
 const Footer = () => {
   return (
     <div>
-      <div className='flex justify-around items-center bg-blue-50 py-[4rem]'>
-        <div className='flex justify-between items-center gap-[1rem]'>
+      <div className='lg:flex lg:justify-around lg:items-center bg-blue-50 py-[4rem] lg:px-0 px-[2rem]'>
+        <div className='flex justify-between items-center lg:gap-[1rem] gap-[2rem]'>
           <div className=''>
             <TfiEmail className='text-indigo-500 text-5xl' />
           </div>
@@ -17,13 +17,13 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className=''>
-          <input type='text' placeholder='Enter your email address' className='py-1 px-2 border-gray-50'/>
+        <div className='lg:mt-0 mt-5'>
+          <input type='text' placeholder='Enter your email address' className='py-[0.5rem] px-5 text-xs lg:w-[60%] w-[70%] border-gray-50'/>
           <button className='bg-indigo-500 text-white font-bold px-2 py-1'>Subscribe</button>
         </div>
       </div>
 
-      <div className='flex justify-around items-center h-[50vh] w-full bg-gray-50'>
+      <div className='lg:flex lg:justify-around items-center lg:h-[50vh] w-full bg-gray-50'>
         <div>
           <h1 className='font-bold text-xl'>Need any Help</h1>
           <div className='text-sm my-2'>
