@@ -5,8 +5,10 @@ import { FaDollarSign } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdDateRange } from "react-icons/md";
 import Slider from "react-slick";
+import { FaLocationArrow } from "react-icons/fa";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { FaIndianRupeeSign } from "react-icons/fa6";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -37,7 +39,7 @@ const Card = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -84,23 +86,24 @@ const Card = () => {
       <div className='mt-2'>
         <h1 className='text-center font-bold text-4xl'>Top Destinations</h1>
       </div>
-    <div className='w-[80%] m-auto'>
+    <div className='w-[90%] m-auto'>
     <div className="my-[1rem]">
     <Slider {...settings}>
       {Allflights.map((val,id) => (
        
-          <div className='border-2 border-white rounded-md p-2 mt-[1rem] shadow-md' key={id}>
-                  <img src={val.img} alt='img' />
-                  <div className='flex justify-around pt-2'>
-                        <p className='flex items-center'><FaLocationDot />{val.source}</p>
-                        <p className='text-2xl'><MdConnectingAirports /></p>
-                        <p className='flex items-center'><FaLocationDot />{val.destination}</p>
-                  </div>
-                  <div className='pl-[1.2rem]'>
-                    <p className='flex items-center'><FaDollarSign />{val.price}</p>
-                    <p className='flex items-center'><MdDateRange />Travel {val.date}</p>
-                  </div>
-                 </div>
+       <div className='border-2 border-white rounded-md mt-[1rem] shadow-sm' key={id}>
+       <img src={val.img} alt='img' className='h-[120px] w-full'/>
+       <div className='flex gap-2 p-2 text-sm font-bold'>
+             <p className='flex items-center'>{val.source}</p>
+             <p className=''>to</p>
+             <p className='flex items-center'>{val.destination}</p>
+       </div>
+       <div className='text-sm p-2'>
+         <p className='flex items-center gap-2'><FaIndianRupeeSign />{val.price}</p>
+         <p className='flex items-center gap-2'><FaLocationArrow />{val.date}</p>
+       </div>
+      </div>
+
        
       ))}
     </Slider>
