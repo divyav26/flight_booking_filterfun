@@ -5,7 +5,7 @@ import { TfiEmail } from "react-icons/tfi";
 
 const Footer = () => {
   return (
-    <div>
+    <div className=''>
       <div className='lg:flex lg:justify-around lg:items-center bg-blue-50 py-[4rem] lg:px-0 px-[2rem]'>
         <div className='flex justify-between items-center lg:gap-[1rem] gap-[2rem]'>
           <div className=''>
@@ -23,9 +23,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className='lg:flex lg:justify-around items-center lg:h-[50vh] w-full bg-gray-50'>
+      <div className='lg:flex lg:justify-between lg:items-center lg:text-left text-center px-[1rem] lg:h-[50vh] w-full bg-gray-50 pt-[1rem]'>
         <div>
-          <h1 className='font-bold text-xl'>Need any Help</h1>
+          <h1 className='font-bold text-2xl'>Need any Help</h1>
           <div className='text-sm my-2'>
             <p className='font-bold'>Call 24/7 for any help</p>
             <p className='text-indigo-500'>+1 (844) 344-32273</p>
@@ -38,16 +38,16 @@ const Footer = () => {
 
           <div className='font-bold'>
             <p className='text-sm'>Follow us on</p>
-            <div className='flex justify-start items-center my-2 gap-3 text-indigo-500'>
+            <div className='flex lg:justify-start justify-center items-center my-2 gap-3 text-indigo-500'>
               <FaSquareInstagram />
-              <CiFacebook />
+              <CiFacebook  />
             </div>
           </div>
 
           
         </div>
         <div className=''>
-            <h1 className='font-bold border-b border-indigo-500'>ABOUT Us</h1>
+            <h1 className='font-bold lg:border-b text-xl border-indigo-500'>ABOUT Us</h1>
             <div className=''>
               <ul className='my-1 text-sm'>
                 <li className='my-1'>Home</li>
@@ -59,7 +59,7 @@ const Footer = () => {
         </div>
 
         <div className=''>
-          <h1 className='font-bold border-b border-indigo-500'>TRAVELER TOOLS</h1>
+          <h1 className='font-bold text-xl lg:border-b border-indigo-500'>TRAVELER TOOLS</h1>
           <div className=''>
               <ul className='my-1 text-sm'>
                 <li className='my-1'>Check Flights</li>
@@ -71,8 +71,8 @@ const Footer = () => {
             </div>
         </div>
 
-        <div className=''>
-          <h1 className='font-bold border-b border-indigo-500'>TOP CITIES</h1>
+        <div className='pb-[2rem]'>
+          <h1 className='font-bold text-xl lg:border-b border-indigo-500'>TOP CITIES</h1>
           <div className=''>
               <ul className='my-1 text-sm'>
                 <li className='my-1'>Flights to India</li>

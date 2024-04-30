@@ -41,22 +41,14 @@ const Home = () => {
         setFilteredFlights(filteredData)
 
     },[searchsource,searchdestination,searchallAirlines,searchallclass,searchPrice,searchdate])
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 3
-      };
    
 
   return (
     <>
     <div>
       <div className='relative'>
-        <img src={banner} alt='bg_banner' className='w-full lg:h-[75vh] md:h-[50vh] h-[60vh]' />
-        <div className="bg-black/45 absolute top-0 left-0 w-full lg:h-[75vh] md:h-[50vh] h-[60vh]" />
+        <img src={banner} alt='bg_banner' className='w-full lg:h-[75vh] md:h-[50vh] h-[70vh]' />
+        <div className="bg-black/45 absolute top-0 left-0 w-full lg:h-[75vh] md:h-[50vh] h-[70vh]" />
       </div>
       <div className='absolute lg:top-40 md:top-60 top-40 w-full'>
       <div className='text-center mb-[2rem]'>
@@ -119,8 +111,8 @@ const Home = () => {
         </div>
       </div>
     </div>
-    <div className='px-[5rem] py-[2rem]'>
-        <h1 className='text-4xl font-bold'>Choose your amazing places</h1>
+    <div className='px-[2rem] py-[2rem]'>
+        <h1 className='lg:text-4xl text-2xl font-bold'>Choose your amazing places</h1>
     </div>
 
    <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-[2rem] lg:px-[5rem] px-[2rem] mb-[2rem]'>
